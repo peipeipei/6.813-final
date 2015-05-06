@@ -111,7 +111,7 @@ var setCircleInactive = function(circleObject) {
 	console.log("Circle set to inactive");
 }
 
-$(document).ready(function() {
+var initialize = function() {
 	var photoOffset = $("#photo-wrapper").offset();
 	var photoTop = photoOffset.top;
 	var photoLeft = photoOffset.left;
@@ -181,4 +181,4 @@ $(document).ready(function() {
 			$("#drawing-canvas").css("z-index", "10");
 		});
 	});
-});
+}
