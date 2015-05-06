@@ -1,28 +1,35 @@
 body {
-	background-color: #FCFCFC
-}
-#overall_container {
-	height: 100%;
-	position: absolute;
-}
-#container {
-	float:left;
-	margin-left:20px;
+	background-color: #FCFCFC;
+	font-family: "Philosopher";
 }
 
-#photo {
+#container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#photo-wrap {
 	position: relative;
 	float: left;
 	min-height: 0px;
+	width: 55%;
+}
+
+#photo {
+	max-width:100%;
+	max-height:100%;
 }
 
 #comments {
 	position: relative;
-	float:left;
-	width: 400px;
-	margin: 10px;
+	float:right;
+	width: 35%;
 }
 
+#message-header {
+	border-bottom: 2px solid purple; 
+	font-size: 20px;
+}
 .comment {
 	min-height: 50px;
 	background-color: white;
@@ -34,16 +41,18 @@ body {
     background-color: #F0F2EB ;
 }
 
-/*.hover{
-    background-color: #F0F2EB ;	
-}*/
 .active {
 	background-color:rgba(212,238,94,0.5);
 }
 
 textarea{
-    width:390px;
+	border: 1px solid rgba(255,66,66,0.8);
+	width: 100%;
+}
+#message{
+	width: 100%;
     border: 1px solid rgba(255,66,66,0.8);
+    min-height: 150px;
 }
 
 .tooltip-inner {
