@@ -1,18 +1,45 @@
-var critiquesRef = new Firebase("https://6813-aperture.firebaseio.com/critiques");
+$(document).ready(function() {
 
-$(document).ready(function(){
-	critiquesRef.once("value", function(snapshot){
-		console.log(snapshot)
-		snapshot.forEach(function(data){
-			var critique = data.val();
-			createRow(critique.subject, critique.username, critique.time, data.key());
-		})
-	})
+	$('.checkRemove').hide(); 
+
+	$('.received-request').addClass("clicked");
+	$('#received-request').addClass("clicked");
+	$('.your-request').addClass("not-clicked");
+	$('#your-request').addClass("not-clicked");
+	$('.critique').addClass("not-clicked");
+	$('#critique').addClass("not-clicked");
+
+	$('.your-request').hide();
+	$('.critique').hide();
+
+	$(".tab.not-clicked").click(function(){
+		console.log("CLICK");
+
+		var previousClicked_tab = $('.tab.clicked');
+		var previousClicked_div = $('.tab-div.clicked');
+		var name = $(this).attr("id");
+		previousClicked_tab.addClass("not-clicked").removeClass("clicked");
+		previousClicked_div.addClass("not-clicked").removeClass("clicked");
+		previousClicked_div.hide();
+		$(this).addClass("clicked").removeClass("not-clicked");
+		$("." + name).addClass("clicked").removeClass("not-clicked");
+		$("." + name).show();
+	});
 
 
-	function createRow(subject, sender, time, id){
-		console.log("hi")
-		row = '<li><a href="message.html?q=' + id + '">Click</a></li>'
-		$("#received_request").append(row)
-	}
-})
+
+
+	$(".remove").click(function() {
+		$(this).hide();   
+		var check = $(this).parent('.delete').children('.checkRemove');
+		$(check).slideToggle(500);
+	});
+	$(".yesDelete").click(function(){
+		$(this).closest('.r-request').hide();
+	});
+	$(".noDelete").click(function(){
+		$(this).closest('.checkRemove').hide();
+		$(this).closest('.delete').children('.remove').show();
+	});
+});
+
