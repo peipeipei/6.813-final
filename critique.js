@@ -464,6 +464,6 @@ $(document).ready(function(){
 		console.log(subject)
 		
 		critiqueRef.update({time: timestamp, message: message, subject: subject});
-		window.location = "inbox.html";
+		window.location = "inbox.html?sent=true";
 	});
 });
