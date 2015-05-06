@@ -2,7 +2,6 @@ var drawable = false;
 var current_id = 0;
 var this_id = 0;
 var id_list = [];
-var deleted = [];
 var editing = false;
 
 $(document).ready(function(){
@@ -202,7 +201,6 @@ $(document).ready(function(){
 		this_id = id;
 		var text = "";
 		id_list = [];
-		deleted = [];
 		
 		// make circles of current id active and draggable
 		$("#div_" + id).children().each(function (){
@@ -252,11 +250,6 @@ $(document).ready(function(){
 		
 		// enable add comment button
 		$("#add_comment").attr("disabled", false);
-
-		// make circles with id not draggable
-		$("#div_" + id).children().each(function (){
-			setCircleInactive($(this));
-		})
 		
 		$("#div_" + id).css("z-index", "50");
 		
@@ -274,14 +267,20 @@ $(document).ready(function(){
 			
 			activate2(id);
 			
-			// remove old annotations
+			// remove or update old annotations
 			annotationsRef.orderByChild("currentID").equalTo(parseInt(id)).once("value", function(snapshot){
 				snapshot.forEach(function(data2){
 					var key = data2.key();
 					
-					var radius = document.getElementById(key).width / 2;
-					var left = document.getElementById(key).style.left;
-					var top = document.getElementById(key).style.top;
+					var circleObject = document.getElementById(key);
+					if (!circleObject) {
+						annotationsRef.child(key).remove();
+						return;
+					}
+					
+					var radius = circleObject.width / 2;
+					var left = circleObject.style.left;
+					var top = circleObject.style.top;
 					
 					var centerX = parseInt(left) + radius;
 					var centerY = parseInt(top) + radius;                        
@@ -312,11 +311,6 @@ $(document).ready(function(){
 				} else {
 					console.log("no added circles");
 				}
-			});
-			
-			deleted.forEach(function(circle_id){
-				var circleRef = new Firebase('https://6813-aperture.firebaseio.com/annotations/' + circle_id);
-				circleRef.remove();
 			});
 		});
 	});

@@ -170,7 +170,6 @@ var initialize = function() {
 	$(document).keydown(function(e) {
 		// 8 = backspace, 46 = delete
 		if (circleHover && (e.keyCode == 8 || e.keyCode == 46)) {
-			deleted.push(circleHover.attr("id"));
 			circleHover.remove();
 			circleHover = null;
 		}
