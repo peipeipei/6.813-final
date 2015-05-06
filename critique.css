@@ -55,6 +55,10 @@ textarea{
     min-height: 150px;
 }
 
+#comments_list{
+	width: 100%;
+}
+
 .tooltip-inner {
     max-width: 250px;
     width: 250px; 

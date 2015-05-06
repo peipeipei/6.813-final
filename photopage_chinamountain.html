@@ -56,10 +56,12 @@
 
             $("#critique").on("click", function(){
                 var critiqueRef = critiquesRef.push({
-                    username: "John Smith",
+                    to: "John Smith",
+                    from: "Alice Jones",
                     subject: "China Mountain",
                     time: "",
-                    imageName: "chinamountain.jpg"
+                    imageName: "chinamountain.jpg",
+                    message: ""
                 });
                 var critiqueID = critiqueRef.key()
                 window.location = "critique.html?q=" + critiqueID;
@@ -108,43 +110,12 @@
               proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <!--  p>Photographer: <strong>bunnymaster</strong></p-->
           </div>
-          
-          <!--  We are taking out commenting 
-          <div class="comment_area">
-              <textarea style="width:512px;">
-              </textarea>
-              
-              <div class="comment_btn_area">
-                  <button class="btn comment_button">Comment</button>
-          
-              </div>
-          </div>
-          
-          <div class="photopage_comments">
-  
-              <div class="a_comment">
-                  <p class="username">Jane Hue</p>
-                  <div class="the_comment">
-                      Here is the first comment. I think the picture is quite cute and the details are amazing. 
-                      Thank you for posting it! 
-                  </div>
-              </div>
-              
-              <div class="a_comment">
-                  <p class="username">Emily Smith</p>
-                  <div class="the_comment">
-                      I love the overall feeling of the picture. It reminds me of home. 
-                  </div>
-              </div>
-          </div> -->
       </div> 
       
       <div class="bottom_right">
           
           <div class="button_area">
               <button id = "critique" title="Critique this Photo" class="btn btn-default" style="width:100%;"> <div style="font-family: 'Quattrocento Sans', sans-serif; font-size:30px;"> Critique</div></span></button>
-              <!-- <button id = "like" class="btn btn-default"><span class="glyphicon glyphicon-heart-empty like-button unliked"> </span></button>
-              <button id = "send-request" title = "Send a request" class="btn btn-default"><span class="glyphicon glyphicon-new-window"> </span></button> -->
           </div>
           
           <div class="camera_info">
@@ -180,19 +151,6 @@
           
       </div>
     </div>
-    
-    <!--<div class="overlay">
-        <div class="form-style">
-            <h2>Submit a Request</h2>
-            <form>
-                <input type="text" name="field1" placeholder="Critiquer's Username" />
-                <input type="email" name="field2" placeholder="Email" />
-                <input type="url" name="field3" placeholder="Website" />
-                <textarea class="overlay-textarea" placeholder="Message" onkeyup="adjust_textarea(this)"></textarea>
-                <input type="button" value="Send Request" />
-            </form>
-        </div>
-    </div>-->
 
 <div id="myModal" class="modal fade">
     <div class="modal-dialog">

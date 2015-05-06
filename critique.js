@@ -30,7 +30,7 @@ $(document).ready(function(){
         var critique = snapshot.val();
         var subject = critique.subject;
         var imgName = critique.imageName;
-        var username = critique.username;
+        var username = critique.to;
 
         $("#subject").attr("value", subject)
         $("#photo").attr("src", "photos/" + imgName);
@@ -62,9 +62,8 @@ $(document).ready(function(){
                     $("#comments").append(c);
                 });
             });
-
+           	initialize();
 			$("#loading").modal("hide");
-			initialize();
         });
     });
 
@@ -436,8 +435,10 @@ $(document).ready(function(){
 		var n = date.toDateString();
 		var time = date.toLocaleTimeString();
 		var timestamp = n + " " + time;
+
+		var message = $("#message").val();
 		
-		critiqueRef.update({time: timestamp});
+		critiqueRef.update({time: timestamp, message: message});
 		window.location = "inbox.html";
 	});
 });
