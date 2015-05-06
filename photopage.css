@@ -87,7 +87,7 @@ textarea{
 
 
 .button_area .glyphicon {
-    font-size: 2.5em;
+    font-size: 2em;
 }
 .button_area{
     margin-bottom: 5px;
@@ -106,7 +106,7 @@ textarea{
 
 
 .camera_info{
-    width: 100%;
+    width: 99%;
     margin-right: 5px;
     border: 1px solid #dddddd;
 }
