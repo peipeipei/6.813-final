@@ -41,13 +41,15 @@
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="gallery1.html">Nature</a></li>
 						</ul>
 					</div>
+
+					<a href="inbox.html"><button class="btn btn-default glyphicon glyphicon-envelope inbox-button"></button></a>
 					
 				</div>
 			</div>
 
 			<div class="bot">
 				<div class="col-xs-6 tab" id="received-request">
-					<p>Received Critiquests</p>
+					<p>Received Critiques</p>
 				</div>
  
 				<div class="col-xs-6 tab" id="your-request">
@@ -59,6 +61,20 @@
 
 		<div class="not-header">
 
+    <div class="modal fade" id="loading" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                	<h4 class="modal-title">Loading...</h4>
+                	<div class="progress" style="margin-top: 20px;">
+                    	<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 			<div class="received-request tab-div">
 			</div>
 
