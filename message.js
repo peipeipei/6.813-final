@@ -36,6 +36,7 @@ $(document).ready(function(){
         $("#subject").append(subject);
         $("#photo").attr("src", "photos/" + imgName);
         $("#from").append(username);
+        $("#title").append(subject);
         $("#comments_list").append(message);
 
         // display all annotations and circles in firebase table
