@@ -1,4 +1,6 @@
-
+body{
+	font-family: 'Quattrocento Sans', sans-serif;	
+}
 .top{
 	background-color: black;
 	height: 50px;
