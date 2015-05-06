@@ -32,12 +32,12 @@ $(document).ready(function(){
         console.log(critique)
         var subject = critique.subject;
         var imgName = critique.imageName;
-        var username = critique.from;
+        var username = critique.to;
         var message = critique.message;
 
         $("#subject").append(subject);
         $("#photo").attr("src", "photos/" + imgName);
-        $("#from").append(username);
+        $("#to").append(username);
         $("#title").append(subject);
         $("#comments_list").append(message);
 
