@@ -12,10 +12,12 @@ $(document).ready(function() {
 	$('.your-request').hide();
 	$('.critique').hide();
 
-	$(".tab.not-clicked").click(function(){
+	$(document).on("click", ".tab.not-clicked", function(){
 		console.log("CLICK");
 
 		var previousClicked_tab = $('.tab.clicked');
+
+		console.log(previousClicked_tab)
 		var previousClicked_div = $('.tab-div.clicked');
 		var name = $(this).attr("id");
 		previousClicked_tab.addClass("not-clicked").removeClass("clicked");
