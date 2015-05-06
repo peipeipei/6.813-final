@@ -1,8 +1,20 @@
+html{
+	height:100%;
+}
+
+body{
+	height:100%;
+}
+
+.not-header{
+	height:100%;
+}
+
 .r-request{
 	width:90%;
 	margin-left: auto ;
   	margin-right: auto ;
-  	border:solid 1px #dddddd;
+  	border:solid 1px #aaaaaa;
   	padding:5px;
 }
 
@@ -59,11 +71,12 @@ td{
 
 
 .tab.clicked{
-	background-color:#dddddd;
+	background-color:#dfdfdf;
 }
 
 .clicked{
-	background-color:#dddddd;
+	background-color:#F5F5F5;
+	height:100%;
 }
 
 .not-header{

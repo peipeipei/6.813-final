@@ -22,5 +22,6 @@ $(document).ready(function(){
 		})*/
 
 		$(".received-request").append(table)
+		$('.checkRemove').hide(); 
 	}
 })

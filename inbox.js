@@ -30,16 +30,15 @@ $(document).ready(function() {
 
 
 
-
-	$(".remove").click(function() {
+	$(document).on("click", ".remove", function(){
 		$(this).hide();   
 		var check = $(this).parent('.delete').children('.checkRemove');
 		$(check).slideToggle(500);
 	});
-	$(".yesDelete").click(function(){
+	$(document).on("click", ".yesDelete", function(){
 		$(this).closest('.r-request').hide();
 	});
-	$(".noDelete").click(function(){
+	$(document).on("click", ".noDelete", function(){
 		$(this).closest('.checkRemove').hide();
 		$(this).closest('.delete').children('.remove').show();
 	});
