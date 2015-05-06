@@ -32,7 +32,8 @@ $(document).ready(function(){
         var imgName = critique.imageName;
         var username = critique.to;
 
-        $("#subject").attr("value", subject)
+        $("#subject").attr("value", subject);
+		$("#photo-title").text(subject);
         $("#photo").attr("src", "photos/" + imgName);
         $("#to").append(username);
 
