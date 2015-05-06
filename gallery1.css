@@ -11,3 +11,8 @@ img{
 .big-image{
 	width:98.5%;
 }
+
+#title {
+	width: 100%;
+	text-align: center;
+}
