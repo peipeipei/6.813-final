@@ -1,3 +1,8 @@
+
+body {
+	font-family: 'Quattrocento Sans', sans-serif;
+}
+
 .bottom_left{
     float:left;
     width: 512 px;
@@ -16,22 +21,24 @@
 .material {
 	margin: 0 auto;
 	width:80%;
+	max-width:1000px;
 }
 
 img{
     padding:5px;
 }
 
-.top {
+.material_top {
 	margin-bottom: 10px;
 }
 
 .photopage_descrip{
     width: 512px;
-    background:#dddddd;
+    /* background:#dddddd; */
     padding: 10px;
     padding-bottom:5px;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
 }
 
 .photopage_comments{
@@ -50,6 +57,7 @@ img{
 textarea{
     width: 512px;
 }
+/*
 
 .comment_btn_area{
     margin-left: 425px;
@@ -58,6 +66,7 @@ textarea{
 .comment_button{
     background-color: rgba(225,237,185,1);
 }
+*/
 
 .username{
     color:darkblue;
@@ -78,10 +87,11 @@ textarea{
 
 
 .button_area .glyphicon {
-    font-size: 2.5em;
+    font-size: 2em;
 }
 .button_area{
     margin-bottom: 5px;
+    margin-right: 5px;
 }
 
 /*
@@ -96,7 +106,8 @@ textarea{
 
 
 .camera_info{
-    width: 97%;
+    width: 99%;
+    margin-right: 5px;
     border: 1px solid #dddddd;
 }
 
@@ -132,7 +143,7 @@ td{
 
 
 .form-style{
-    font-family: 'Open Sans Condensed', arial, sans;
+    /* font-family: 'Open Sans Condensed', arial, sans;*/ 
     width: 500px;
     padding: 30px;
     background: #FFFFFF;
@@ -140,7 +151,7 @@ td{
 .form-style h2{
     background: #4D4D4D;
     text-transform: uppercase;
-    font-family: 'Open Sans Condensed', sans-serif;
+    /* font-family: 'Open Sans Condensed', sans-serif;*/ 
     color: #797979;
     font-size: 18px;
     font-weight: 100;
@@ -170,7 +181,7 @@ td{
     border-bottom: 1px solid #ddd;
     background: transparent;
     margin-bottom: 10px;
-    font: 16px Arial, Helvetica, sans-serif;
+    /*font: 16px Arial, Helvetica, sans-serif;*/
     height: 45px;
 }
 .form-style textarea{

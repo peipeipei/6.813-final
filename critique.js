@@ -6,6 +6,13 @@ var deleted = [];
 var editing = false;
 
 $(document).ready(function(){
+	// Prevent Backspace from going back since we use it for deleting
+	$(document).keydown(function (e) {
+		if (e.keyCode == 8 && !$(e.target).is("input, textarea")) {
+			e.preventDefault();
+		}
+	});
+	
 	$("#loading").modal("show");
 
     var critiqueID = getQueryVariable("q")
@@ -20,9 +27,14 @@ $(document).ready(function(){
 	});
 	
     critiqueRef.once("value", function(snapshot) {
-        //var critique = snapshot.val();
-        //var imgName = critique.imageName;
-        //$("#photo").attr("src", "gallery_photos/" + imgName);
+        var critique = snapshot.val();
+        var subject = critique.subject;
+        var imgName = critique.imageName;
+        var username = critique.to;
+
+        $("#subject").attr("value", subject)
+        $("#photo").attr("src", "photos/" + imgName);
+        $("#to").append(username);
 
         // display all annotations and circles in firebase table
         annotationsRef.once("value", function(snapshot) {
@@ -50,7 +62,7 @@ $(document).ready(function(){
                     $("#comments").append(c);
                 });
             });
-
+           	initialize();
 			$("#loading").modal("hide");
         });
     });
@@ -423,8 +435,10 @@ $(document).ready(function(){
 		var n = date.toDateString();
 		var time = date.toLocaleTimeString();
 		var timestamp = n + " " + time;
+
+		var message = $("#message").val();
 		
-		critiqueRef.update({time: timestamp});
+		critiqueRef.update({time: timestamp, message: message});
 		window.location = "inbox.html";
 	});
 });
