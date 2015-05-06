@@ -228,10 +228,10 @@ $(document).ready(function(){
 				var textarea = '<textarea id="text_' + id + '">' + text + '</textarea>'
 				$(comment).append(textarea);
 				
-				var new_div = '<div class = "btn-toolbar"><button class = "cancel_edit btn btn-primary pull-right" style = "background-color: purple" id = "cancel_edit_' + id + '">Cancel</button><button class = "edit_comment btn btn-primary pull-right" style = "background-color: purple" id = "edit_comment_' + id + '">Save Comment</button></div>'
-				
+				var new_div = '<div class = "btn-toolbar" role="toolbar"><button class = "cancel_edit btn btn-primary pull-right" style = "background-color: purple" id = "cancel_edit_' + id + '">Cancel</button><button class = "edit_comment btn btn-primary pull-right" style = "background-color: purple" id = "edit_comment_' + id + '">Save Comment</button></div>'
+
 				$(comment).append(new_div);
-				
+
 				$("#comment_" + id).replaceWith(comment);
 				
 				$(comment).addClass("active");
@@ -250,7 +250,7 @@ $(document).ready(function(){
 		this_id = id;
 		var text = $("#text_" + id).val();
 		
-		// disable add_comment button
+		// enable add comment button
 		$("#add_comment").attr("disabled", false);
 
 		// make circles with id not draggable
@@ -328,6 +328,8 @@ $(document).ready(function(){
 		editing = false;
 		drawable = false;
 		
+		// enable add comment button
+		$("#add_comment").attr("disabled", false);
 		$("#div_" + id).css("z-index", "50");
 		
 		// set text of comments equal to old text

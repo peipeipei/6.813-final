@@ -73,6 +73,10 @@ body {
 textarea{
 	width: 100%;
 }
+
+.btn-toolbar {
+	height: 35px;
+}
 #message{
 	width: 100%;
     min-height: 150px;
