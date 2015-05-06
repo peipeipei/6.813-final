@@ -4,7 +4,7 @@ body {
 }
 
 #container {
-	width: 75%;
+	width: 1000px;
 	margin: 0 auto;
 	padding-top: 20px;
 }
@@ -14,7 +14,6 @@ body {
 	float: left;
 	min-height: 0px;
 	width: 512px;
-	padding-bottom: 20px;
 }
 
 #photo {
@@ -24,10 +23,31 @@ body {
 }
 
 #comments {
-	position: relative;
-	float:right;
-	width: 35%;
+	margin-left: 532px;
 	padding-bottom: 20px;
+}
+
+@media (max-width: 1111px) {
+	#container {
+		width: 90%;
+		margin: 0 auto;
+		padding-top: 20px;
+	}
+}
+
+@media (max-width: 950px) {
+	#container {
+		width: 512px;
+		margin: 0 auto;
+		padding-top: 20px;
+	}
+	
+	#comments {
+		clear: left;
+		margin: 0;
+		width: 512px;
+		padding-bottom: 20px;
+	}
 }
 
 #message-header {

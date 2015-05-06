@@ -102,10 +102,6 @@ var setCircleInactive = function(circleObject) {
 }
 
 var initialize = function() {
-	var photoOffset = $("#photo-wrapper").offset();
-	var photoTop = photoOffset.top;
-	var photoLeft = photoOffset.left;
-	
 	// Add a canvas over the photo
 	var photoWidth = $("#photo-wrapper").width();
 	var photoHeight = $("#photo-wrapper").height();
@@ -130,7 +126,7 @@ var initialize = function() {
 			return;
 		}
 		
-		var origin = {top: Math.round(e.pageY - photoTop), left: Math.round(e.pageX - photoLeft)};
+		var origin = {top: Math.round(e.pageY - $("#photo-wrapper").offset().top), left: Math.round(e.pageX - $("#photo-wrapper").offset().left)};
 		
 		$("#drawing-canvas").css("z-index", "200");
 		
@@ -139,8 +135,8 @@ var initialize = function() {
 		
 		// Start listening for mouse movements
 		$(document).mousemove(function(e) {
-			var top = e.pageY - photoTop;
-			var left = e.pageX - photoLeft;
+			var top = e.pageY - $("#photo-wrapper").offset().top;
+			var left = e.pageX - $("#photo-wrapper").offset().left;
 			
 			// If cursor has been dragged far enough, show a circle
 			var distance = euclidDist(origin.left, origin.top, left, top);
@@ -153,8 +149,8 @@ var initialize = function() {
 		
 		// Finish up on mouse release
 		$(document).one("mouseup", function(e) {
-			var top = e.pageY - photoTop;
-			var left = e.pageX - photoLeft;
+			var top = e.pageY - $("#photo-wrapper").offset().top;
+			var left = e.pageX - $("#photo-wrapper").offset().left;
 			
 			// If valid circle drawn, save it
 			var distance = euclidDist(origin.left, origin.top, left, top);
