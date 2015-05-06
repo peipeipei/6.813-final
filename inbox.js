@@ -13,6 +13,7 @@ $(document).ready(function() {
 	$('.critique').hide();
 
 	$(document).on("click", ".tab.not-clicked", function(){
+		$("#loading").modal("show");	
 		console.log("CLICK");
 
 		var previousClicked_tab = $('.tab.clicked');
@@ -26,6 +27,7 @@ $(document).ready(function() {
 		$(this).addClass("clicked").removeClass("not-clicked");
 		$("." + name).addClass("clicked").removeClass("not-clicked");
 		$("." + name).show();
+					$("#loading").modal("hide");
 
 	});
 

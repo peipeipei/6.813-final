@@ -3,7 +3,7 @@ var critiquesRef = new Firebase("https://6813-aperture.firebaseio.com/critiques"
 var receivedRef = new Firebase("https://6813-aperture.firebaseio.com/received_critiques");
 
 $(document).ready(function(){
-	
+		$("#loading").modal("show");	
 	receivedRef.once("value", function(snapshot){
 		snapshot.forEach(function(data){
 			var critique = data.val();
@@ -16,6 +16,7 @@ $(document).ready(function(){
 				createRow(critique.subject, critique.to, critique.time, critique.imageName, data.key());
 			})
 		})
+		$("#loading").modal("hide");
 	})
 
 	$(document).on("click", ".r-request", function(){
