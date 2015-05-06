@@ -28,13 +28,21 @@ $(document).ready(function() {
 		$("." + name).show();
 	});
 
-	$(document).on("click", ".remove", function(){
+	$(document).on("click", ".remove", function(event){
+		event.stopPropagation();
 		var x = window.confirm("Are you sure you want to delete?");
 		if (x){
 			$(this).closest(".r-request").remove();
+			var id = $(this).closest(".r-request").attr("id");
+			
+			var critiqueInfoRef = new Firebase("https://6813-aperture.firebaseio.com/critiques/" + id);
+			critiqueInfoRef.remove();
+
+			var critiqueRef = new Firebase("https://6813-aperture.firebaseio.com/" + id);
+			critiqueRef.remove();
+
 		}
 		else{
-
 		}
 	});
 
