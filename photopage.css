@@ -1,3 +1,4 @@
+
 body {
 	font-family: 'Quattrocento Sans', sans-serif;
 }
@@ -57,6 +58,7 @@ textarea{
     width: 512px;
 }
 /*
+
 .comment_btn_area{
     margin-left: 425px;
 }
@@ -65,6 +67,7 @@ textarea{
     background-color: rgba(225,237,185,1);
 }
 */
+
 .username{
     color:darkblue;
     font-weight: bolder;

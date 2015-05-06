@@ -1,0 +1,72 @@
+.r-request{
+	width:90%;
+	margin-left: auto ;
+  	margin-right: auto ;
+  	border:solid 1px #dddddd;
+  	padding:5px;
+}
+
+table, tr{
+	width:100%;
+}
+
+td{
+	padding:1px;
+}
+
+.photo{
+	width:20%;
+	text-align: center;
+}
+
+.user{
+	width:20%;
+}
+
+.friend-status{
+	width:8%;
+}
+
+.title-tags{
+	width:40%;
+}
+
+.date{
+	width:8%;
+}
+
+.delete{
+	width:12%;
+	text-align: right;
+	vertical-align: middle;
+}
+
+.checkRemove{
+	height: 78px;
+	text-align: center;
+	margin: -8px 0px -8px 8px;
+}
+
+.yesDelete{
+	width:50%;
+	background-color:red;
+}
+
+.noDelete{
+	width:50%;
+	background-color:#FFCC11;
+}
+
+
+.tab.clicked{
+	background-color:#dddddd;
+}
+
+.clicked{
+	background-color:#dddddd;
+}
+
+.not-header{
+	padding-top:8px;
+}
+
