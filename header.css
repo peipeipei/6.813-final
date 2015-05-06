@@ -1,0 +1,38 @@
+
+.top{
+	background-color: black;
+	height: 50px;
+	margin-bottom:5px;
+}
+
+.bot{
+	background-color:purple;
+	height:30px;
+	font-size:20px;
+	color:white;
+}
+
+.bot div{
+	text-align: center;
+	font-family: 'Philosopher', sans-serif;
+}
+
+.bot div{
+	padding: 0px;
+ 	border-left: white solid 5px;
+}
+
+.bot div:first-child{
+	border:none;
+}
+
+#logo{
+	position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+    font-family: 'Redressed', cursive;
+    color:white;
+    font-size:36px;
+}
