@@ -24,9 +24,9 @@
 }
 
 .inactive {
-	filter: alpha(opacity=30);
-	-moz-opacity: 0.3;
-	opacity: 0.3;
+	filter: alpha(opacity=20);
+	-moz-opacity: 0.2;
+	opacity: 0.2;
 }
 
 .draggable {
