@@ -42,16 +42,15 @@ body {
 }
 
 .active {
-	background-color:rgba(212,238,94,0.5);
+	/*background-color:rgba(212,238,94,0.5);*/
+	background-color:#E0E0E0;
 }
 
 textarea{
-	border: 1px solid rgba(255,66,66,0.8);
 	width: 100%;
 }
 #message{
 	width: 100%;
-    border: 1px solid rgba(255,66,66,0.8);
     min-height: 150px;
 }
 
