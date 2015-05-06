@@ -6,6 +6,13 @@ var deleted = [];
 var editing = false;
 
 $(document).ready(function(){
+	// Prevent Backspace from going back since we use it for deleting
+	$(document).keydown(function (e) {
+		if (e.keyCode == 8 && !$(e.target).is("input, textarea")) {
+			e.preventDefault();
+		}
+	});
+	
 	$("#loading").modal("show");
 
     var critiqueID = getQueryVariable("q")
