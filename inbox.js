@@ -29,7 +29,13 @@ $(document).ready(function() {
 	});
 
 	$(document).on("click", ".remove", function(){
-		
+		var x = window.confirm("Are you sure you want to delete?");
+		if (x){
+			$(this).closest(".r-request").remove();
+		}
+		else{
+
+		}
 	});
 
 	// $(document).on("click", ".remove", function(){
