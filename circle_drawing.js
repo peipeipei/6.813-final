@@ -3,8 +3,8 @@ var OUTLINE_SIZE = 1;
 var STROKE_COLOR = "#ffffff";
 var OUTLINE_COLOR = "#000000";
 
-// Flag for hovering over an existing circle
-var circleHover = false;
+// jQuery object for a circle that is hovered over
+var circleHover = null;
 
 // Get the Euclidean distance between two points (x1, y1) and (x2, y2)
 var euclidDist = function(x1, y1, x2, y2) {
@@ -76,22 +76,12 @@ var saveCircle = function(originX, originY, radius, circleID, groupID) {
 var setCircleActive = function(circleObject) {
 	circleObject.hover(
 		function(e) {
-			circleHover = true;
+			circleHover = circleObject;
 			circleObject.addClass("draggable");
-			$(document).keydown(function(e) {
-				// 8 = backspace, 46 = delete
-				if (e.keyCode == 8 || e.keyCode == 46) {
-					circleObject.remove();
-					circleHover = false;
-
-					deleted.push(circleObject.attr("id"));
-				}
-			});
 		},
 		function(e) {
-			circleHover = false;
+			circleHover = null;
 			circleObject.removeClass("draggable");
-			$(document).off("keydown");
 		}
 	);
 	
@@ -136,8 +126,6 @@ var initialize = function() {
 	// Listen for mousedown on photo
 	$("#photo-wrapper").mousedown(function(e) {
 		// Check for active drawing and don't count clicks on existing circles
-
-		console.log(circleHover);
 		if (!drawable || circleHover) {
 			return;
 		}
@@ -180,5 +168,15 @@ var initialize = function() {
 			$(document).off("mousemove");
 			$("#drawing-canvas").css("z-index", "10");
 		});
+	});
+	
+	// Listen for circle deletion
+	$(document).keydown(function(e) {
+		// 8 = backspace, 46 = delete
+		if (circleHover && (e.keyCode == 8 || e.keyCode == 46)) {
+			deleted.push(circleHover.attr("id"));
+			circleHover.remove();
+			circleHover = null;
+		}
 	});
 }
