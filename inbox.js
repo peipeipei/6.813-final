@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$('.checkRemove').hide(); 
+	// $('.checkRemove').hide(); 
 
 	$('.received-request').addClass("clicked");
 	$('#received-request').addClass("clicked");
@@ -28,20 +28,21 @@ $(document).ready(function() {
 		$("." + name).show();
 	});
 
-
-
-
-	$(".remove").click(function() {
-		$(this).hide();   
-		var check = $(this).parent('.delete').children('.checkRemove');
-		$(check).slideToggle(500);
+	$(document).on("click", ".remove", function(){
+		
 	});
-	$(".yesDelete").click(function(){
-		$(this).closest('.r-request').hide();
-	});
-	$(".noDelete").click(function(){
-		$(this).closest('.checkRemove').hide();
-		$(this).closest('.delete').children('.remove').show();
-	});
+
+	// $(document).on("click", ".remove", function(){
+	// 	$(this).hide();   
+	// 	var check = $(this).parent('.delete').children('.checkRemove');
+	// 	$(check).slideToggle(500);
+	// });
+	// $(document).on("click", ".yesDelete", function(){
+	// 	$(this).closest('.r-request').hide();
+	// });
+	// $(document).on("click", ".noDelete", function(){
+	// 	$(this).closest('.checkRemove').hide();
+	// 	$(this).closest('.delete').children('.remove').show();
+	// });
 });
 
