@@ -27,7 +27,7 @@ $(document).ready(function() {
 		$(this).addClass("clicked").removeClass("not-clicked");
 		$("." + name).addClass("clicked").removeClass("not-clicked");
 		$("." + name).show();
-					$("#loading").modal("hide");
+		$("#loading").modal("hide");
 
 	});
 
@@ -62,4 +62,3 @@ $(document).ready(function() {
 	// 	$(this).closest('.delete').children('.remove').show();
 	// });
 });
-
