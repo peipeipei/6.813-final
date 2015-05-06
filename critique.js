@@ -27,9 +27,14 @@ $(document).ready(function(){
 	});
 	
     critiqueRef.once("value", function(snapshot) {
-        //var critique = snapshot.val();
-        //var imgName = critique.imageName;
-        //$("#photo").attr("src", "gallery_photos/" + imgName);
+        var critique = snapshot.val();
+        var subject = critique.subject;
+        var imgName = critique.imageName;
+        var username = critique.username;
+
+        $("#subject").attr("value", subject)
+        $("#photo").attr("src", "photos/" + imgName);
+        $("#to").append(username);
 
         // display all annotations and circles in firebase table
         annotationsRef.once("value", function(snapshot) {
