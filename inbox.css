@@ -63,6 +63,11 @@ td{
 }
 
 
+.label-bar{
+	text-align:left;
+}
+
+
 .title{
 	font-style: italic;
 }
