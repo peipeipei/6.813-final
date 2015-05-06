@@ -26,6 +26,7 @@ $(document).ready(function() {
 		$(this).addClass("clicked").removeClass("not-clicked");
 		$("." + name).addClass("clicked").removeClass("not-clicked");
 		$("." + name).show();
+
 	});
 
 	$(document).on("click", ".remove", function(event){
@@ -34,7 +35,7 @@ $(document).ready(function() {
 		if (x){
 			$(this).closest(".r-request").remove();
 			var id = $(this).closest(".r-request").attr("id");
-			
+
 			var critiqueInfoRef = new Firebase("https://6813-aperture.firebaseio.com/critiques/" + id);
 			critiqueInfoRef.remove();
 
