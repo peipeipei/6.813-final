@@ -61,6 +61,10 @@ body {
 	border: 1px solid lightgrey;
 }
 
+div.comment{
+	word-wrap:break-word;
+}
+
 .comment:hover{
     background-color: #F0F2EB ;
 }
