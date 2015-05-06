@@ -3,6 +3,7 @@
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	    <link href='http://fonts.googleapis.com/css?family=Redressed' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
 
@@ -16,29 +17,42 @@
 		<div class="header">
 
 			<div class="top">
-				<div class="col-md-4" id="left-header">
+				<div class="col-xs-4" id="left-header">
 					
 				</div>
 
-				<div class="col-md-4" id="mid-header">
+				<div class="col-xs-4" id="mid-header">
 					<p id="logo">aperture</p>
 				</div>
 
-				<div class="col-md-4" id="right-header">
+				<div class="col-xs-4" id="right-header">
+
+					<div class="dropdown gallery-dropdown">
+						<button class="btn btn-default dropdown-togglen gallery-drop-button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+							Galleries
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Nature</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">N/A</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">N/A</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">N/A</a></li>
+						</ul>
+					</div>
 					
 				</div>
 			</div>
 
 			<div class="bot">
-				<div class="col-md-4" id="from-others">
+				<div class="col-xs-4" id="from-others">
 					<p>Received Requests</p>
 				</div>
 
-				<div class="col-md-4" id="from-you">
+				<div class="col-xs-4" id="from-you">
 					<p>Your Requests</p>
 				</div>
 
-				<div class="col-md-4" id="your-critiques">
+				<div class="col-xs-4" id="your-critiques">
 					<p>Critiqued</p>
 				</div>
 

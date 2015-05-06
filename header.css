@@ -36,3 +36,35 @@
     color:white;
     font-size:36px;
 }
+
+.gallery-dropdown{
+	float:right;
+	top:8px;
+}
+
+.btn.gallery-drop-button{
+	background: black;
+	border-color: #aaaaaa;
+	color: white;
+}
+
+.gallery-drop-button:hover{
+	background: #444444;
+	border-color: #aaaaaa;
+	color: white;
+}
+
+.inbox-button{
+	color:white;
+	float:right;
+	top:10px;
+	background-color:black;
+	border-color:#aaaaaa;
+}
+
+.inbox-button:hover{
+	background: #444444;
+	border-color: #aaaaaa;
+	color:white;
+}
+
