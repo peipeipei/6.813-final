@@ -4,11 +4,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="photopage.css">
     <link rel="stylesheet" type="text/css" href="critique.css">
-            <link rel="stylesheet" type="text/css" href="header.css">
+        <link rel="stylesheet" type="text/css" href="header.css">
         <link rel="stylesheet" type="text/css" href="inbox.css"> 
         <link href='http://fonts.googleapis.com/css?family=Redressed' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="circleDrawing.css" />
-    <title>Aperture - Send a Critique</title>
+    <title>Aperture: View Message</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
           <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -16,18 +16,20 @@
       <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans' rel='stylesheet' type='text/css'>
     
-    <script type="text/javascript" src="critique.js">
-   </script>
+    <!--<script type="text/javascript" src="critique.js">
+   </script>-->
    <script type="text/javascript" src="circle_drawing.js"></script>
+   <script type = "text/javascript" src = "message-received.js"></script>
+
 </head>
 <body>
-    <div class="modal fade" id="loading" data-backdrop="static" data-keyboard="false">
+    <div class="modal fade" id="loading">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-body">
-                	<h4 class="modal-title">Loading...</h4>
-                	<div class="progress" style="margin-top: 20px;">
-                    	<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                    <h4 class="modal-title">Loading...</h4>
+                    <div class="progress" style="margin-top: 20px;">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
                         </div>
                     </div>
                 </div>
@@ -64,38 +66,35 @@
             </div>
         </div>
 
+<div id = "not-header">    
 <div id = "container">
     <div id = "message-header">
-        <form class="form-horizontal">
-        <div class="form-group">
-            <label class="col-sm-2 ">Subject: </label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="subject">
-            </div>
-        </div>
-  
-        <div class="form-group">
-            <label class="col-sm-2 ">To: </label>
-            <div class="col-xs-8">
-                <span id="to"></span>
-            </div>
-            <div class="col-xs-2">
-            	<button type = "button" id = "send_message" class="btn btn-danger btn-block">Send</button>
-            </div>
-        </div>
-        </form>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 ">Subject: </label>
+    <div class="col-sm-10">
+        <span id = "subject"></span>
     </div>
-
-    <div id = "photo-wrap">
-        <h3>Title: <span id="photo-title"></span><span class="glyphicon glyphicon-question-sign pull-right" data-toggle="tooltip" data-original-title='Comment on specific parts of this photo under "Focal Points". While writing your comment, click and drag on the photo to highlight the area(s) you want to comment on. (You can delete these highlights with the Delete key on your keyboard.)'></span></h3>
-        <div id = "photo-wrapper"><img id = "photo" src="" style="width: 512px; padding: 0"/></div>
-        <h3>Overall Comments:</h3>
-        <textarea id = "message"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 ">From: </label>
+    <div class="col-sm-10">
+        <span id = "from"></span>
     </div>
-
-    <div id = "comments">
-	   <h3> Focal Points <button id = "add_comment" title="Add a comment and annotations" class = "btn btn-default pull-right"><span class="glyphicon glyphicon-plus"></span></button></h3>
+  </div>
+</form>
+</div>
+<div id = "photo-wrap">
+    <h3 id = "title">Title: </h3>
+    <div id = "photo-wrapper">
+        <img id = "photo" src="" style = "padding: 0;"/>
     </div>
+    <h3>Overall Comments:</h3>
+    <div id="comments_list"></div>
+</div>
+<div id = "comments">
+	<h3> Focal Points</h3>
+</div>
 </div>
 </div>
 

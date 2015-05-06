@@ -18,7 +18,7 @@ $(document).ready(function(){
     var critiqueID = getQueryVariable("q")
     console.log(critiqueID)
 
-    var critiqueRef = new Firebase("https://6813-aperture.firebaseio.com/critiques/" + critiqueID);
+    var critiqueRef = new Firebase("https://6813-aperture.firebaseio.com/received_critiques/" + critiqueID);
     var annotationsRef = new Firebase("https://6813-aperture.firebaseio.com/" + critiqueID + "/annotations");
     var commentsRef = new Firebase("https://6813-aperture.firebaseio.com/" + critiqueID + "/comments");
 
@@ -32,12 +32,12 @@ $(document).ready(function(){
         console.log(critique)
         var subject = critique.subject;
         var imgName = critique.imageName;
-        var username = critique.to;
+        var username = critique.from;
         var message = critique.message;
 
         $("#subject").append(subject);
         $("#photo").attr("src", "photos/" + imgName);
-        $("#to").append(username);
+        $("#from").append(username);
         $("#title").append(subject);
         $("#comments_list").append(message);
 

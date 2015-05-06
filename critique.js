@@ -33,6 +33,8 @@ $(document).ready(function(){
         var username = critique.to;
 
         $("#subject").attr("value", subject);
+
+        console.log(subject)
 		$("#photo-title").text(subject);
         $("#photo").attr("src", "photos/" + imgName);
         $("#to").append(username);
@@ -457,6 +459,7 @@ $(document).ready(function(){
 		var message = $("#message").val();
 
 		var subject = $("#subject").val();
+		console.log(subject)
 		
 		critiqueRef.update({time: timestamp, message: message, subject: subject});
 		window.location = "inbox.html";
