@@ -6,6 +6,7 @@ body {
 #container {
 	width: 80%;
 	margin: 0 auto;
+	padding-top: 20px;
 }
 
 #photo-wrap {
@@ -13,6 +14,7 @@ body {
 	float: left;
 	min-height: 0px;
 	width: 55%;
+	padding-bottom: 20px;
 }
 
 #photo {
@@ -24,6 +26,7 @@ body {
 	position: relative;
 	float:right;
 	width: 35%;
+	padding-bottom: 20px;
 }
 
 #message-header {
