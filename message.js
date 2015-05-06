@@ -16,6 +16,7 @@ $(document).ready(function(){
 	$("#loading").modal("show");
 
     var critiqueID = getQueryVariable("q")
+    console.log(critiqueID)
 
     var critiqueRef = new Firebase("https://6813-aperture.firebaseio.com/critiques/" + critiqueID);
     var annotationsRef = new Firebase("https://6813-aperture.firebaseio.com/" + critiqueID + "/annotations");
@@ -28,6 +29,7 @@ $(document).ready(function(){
 	
     critiqueRef.once("value", function(snapshot) {
         var critique = snapshot.val();
+        console.log(critique)
         var subject = critique.subject;
         var imgName = critique.imageName;
         var username = critique.from;

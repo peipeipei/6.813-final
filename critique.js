@@ -75,6 +75,8 @@ $(document).ready(function(){
 		drawable = true;
 		editing = true;
 
+		removeIcons();
+
 		var div = document.createElement("div");
 		div.id = "div_" + current_id;
 		div.className = "circle-group";
@@ -91,7 +93,7 @@ $(document).ready(function(){
 		$(comment).append(textarea);
 		
 		// add post comment and cancel buttons
-		var new_div = '<div class = "btn-toolbar"><button class = "cancel btn btn-danger pull-right" id = "cancel_' + current_id + '">Cancel</button><button class = "post btn btn-danger pull-right" id = "post_' + current_id + '">Post Comment</button></div>'
+		var new_div = '<div class = "btn-toolbar"><button class = "cancel btn btn-primary pull-right" style="background-color: purple" id = "cancel_' + current_id + '">Cancel</button><button class = "post btn btn-primary pull-right" style="background-color: purple" id = "post_' + current_id + '">Post Comment</button></div>'
 		
 		$(comment).append(new_div);
 		$("#comments").append(comment);
@@ -206,6 +208,9 @@ $(document).ready(function(){
 		})
 		
 		$("#div_" + id).css("z-index", "100");
+
+		// disable add_comment button
+		$("#add_comment").attr("disabled", true);
 		
 		// search for comment with specified id in firebase
 		commentsRef.orderByChild("currentID").equalTo(parseInt(id)).once("value", function(snapshot) {
@@ -220,7 +225,7 @@ $(document).ready(function(){
 				var textarea = '<textarea id="text_' + id + '">' + text + '</textarea>'
 				$(comment).append(textarea);
 				
-				var new_div = '<div class = "btn-toolbar"><button class = "cancel_edit btn btn-danger pull-right" id = "cancel_edit_' + id + '">Cancel</button><button class = "edit_comment btn btn-danger pull-right" id = "edit_comment_' + id + '">Edit Comment</button></div>'
+				var new_div = '<div class = "btn-toolbar"><button class = "cancel_edit btn btn-primary pull-right" style = "background-color: purple" id = "cancel_edit_' + id + '">Cancel</button><button class = "edit_comment btn btn-primary pull-right" style = "background-color: purple" id = "edit_comment_' + id + '">Save Comment</button></div>'
 				
 				$(comment).append(new_div);
 				
@@ -242,6 +247,9 @@ $(document).ready(function(){
 		this_id = id;
 		var text = $("#text_" + id).val();
 		
+		// disable add_comment button
+		$("#add_comment").attr("disabled", false);
+
 		// make circles with id not draggable
 		$("#div_" + id).children().each(function (){
 			setCircleInactive($(this));
@@ -380,6 +388,15 @@ $(document).ready(function(){
 				var icons_id = "icons_" + id;
 				$("#" + icons_id).remove();
 			}
+		});
+	}
+
+		// add edit and delete icons to comment
+	function removeIcons(){
+		$('.comment').each(function(i, obj) {
+			var id = obj.id.substring(8);
+			var icons_id = "icons_" + id;
+			$("#" + icons_id).remove();
 		});
 	}
 	
