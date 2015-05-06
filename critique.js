@@ -438,8 +438,10 @@ $(document).ready(function(){
 		var timestamp = n + " " + time;
 
 		var message = $("#message").val();
+
+		var subject = $("#subject").val();
 		
-		critiqueRef.update({time: timestamp, message: message});
+		critiqueRef.update({time: timestamp, message: message, subject: subject});
 		window.location = "inbox.html";
 	});
 });

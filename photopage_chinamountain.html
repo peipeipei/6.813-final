@@ -27,33 +27,6 @@
     <script type="text/javascript">
         var critiquesRef = new Firebase("https://6813-aperture.firebaseio.com/critiques");
         $(document).ready(function(){
-            $(".comment_button").on("click", function(){
-                var comment = $('textarea').val();
-                var user = $('.glyphicon-user').text();
-                var add = '<div class="a_comment">' + '<p class="username">' + user + '</p>' + '<div class="the_comment">' + comment + '</div></div>'
-                $('.photopage_comments').append(add);
-                $('textarea').val("");
-            });
-            
-            $(".like-button").on("click",function(){
-                if ($(this).hasClass("unliked")){
-                    $(this).removeClass("unliked");
-                    $(this).removeClass("glyphicon-heart-empty");
-                    $(this).addClass("glyphicon-heart");
-                    $(this).addClass("liked");
-                }
-                else{
-                    $(this).removeClass("liked");
-                    $(this).removeClass("glyphicon-heart");
-                    $(this).addClass("glyphicon-heart-empty");
-                    $(this).addClass("unliked");
-                }
-            });
-
-            $("#send-request").on("click", function() {
-              $("#myModal").modal('show');
-            })
-
             $("#critique").on("click", function(){
                 var critiqueRef = critiquesRef.push({
                     to: "John Smith",
@@ -67,8 +40,6 @@
                 window.location = "critique.html?q=" + critiqueID;
             })
         });
-
-
     </script>
     
     <title>PhotoCritque: China Mountain</title>
