@@ -69,16 +69,19 @@
     <div id = "message-header">
         <form class="form-horizontal">
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 ">Subject: </label>
+            <label class="col-sm-2 ">Subject: </label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="subject">
             </div>
         </div>
   
         <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 ">To: </label>
-            <div class="col-sm-10">
+            <label class="col-sm-2 ">To: </label>
+            <div class="col-xs-8">
                 <span id="to"></span>
+            </div>
+            <div class="col-xs-2">
+            	<button id = "send_message" class="btn btn-danger btn-block">Send</button>
             </div>
         </div>
         </form>
@@ -89,10 +92,6 @@
         <div id = "photo-wrapper"><img id = "photo" src="" style="padding: 0"/></div>
         <h3>Overall Comments:</h3>
         <textarea id = "message"></textarea>
-        <div class="btn-toolbar">
-            <button id = "send_message" class="btn btn-danger">Send</button> 
-            <button class="btn btn-default pull-right"><span title = "Delete" class="glyphicon glyphicon-trash"></span></button>
-        </div>
     </div>
 
     <div id = "comments">
