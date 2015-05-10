@@ -13,7 +13,15 @@ $(document).ready(function(){
 		critiquesRef.once("value", function(snapshot){
 			snapshot.forEach(function(data){
 				var critique = data.val();
-				createRow(critique.subject, critique.to, critique.time, critique.imageName, data.key());
+				if (critique.time != ""){
+					createRow(critique.subject, critique.to, critique.time, critique.imageName, data.key());
+				}
+				else {
+					var thisRef = new Firebase("https://6813-aperture.firebaseio.com/critiques/" + data.key());
+					thisRef.remove();
+
+					var thisAnnotationREf = new Firebase("https://6813-aperture.firebaseio.com/" + data.key());
+				}
 			})
 		})
 		$("#loading").modal("hide");
@@ -54,7 +62,7 @@ $(document).ready(function(){
 
 		var table = '<div class = "r-request" id = "' + id + '"><table><tr><td class="photo"><img src = "photos/' + image + '" style="height:64px;"/></td><td class="user"><p class="username">' + sender + '</p></td><td class="title-tags"><span class="title">' + subject + '</span></td><td class="date">' + timestring + '</td><td class="delete" style= "z-index:10"><p class="glyphicon glyphicon-remove remove"></p><table class="checkRemove"><tr><td class="yesDelete"><p class="glyphicon glyphicon-trash"></p></td><td class="noDelete"><p class="glyphicon glyphicon-minus"></p></td></tr></table></td></tr></table></div>'
 
-		$(".your-request").append(table)
+		$("#label-bar-sent").after(table)
 		$('.checkRemove').hide(); 
 	}
 
@@ -79,7 +87,7 @@ $(document).ready(function(){
 
 		var table = '<div class = "y-request" id = "' + id + '"><table><tr><td class="photo"><img src = "photos/' + image + '" style="height:64px;"/></td><td class="user"><p class="username">' + sender + '</p></td><td class="title-tags"><span class="title">' + subject + '</span></td><td class="date">' + timestring + '</td><td class="delete" style= "z-index:10"><p class="glyphicon glyphicon-remove remove"></p><table class="checkRemove"><tr><td class="yesDelete"><p class="glyphicon glyphicon-trash"></p></td><td class="noDelete"><p class="glyphicon glyphicon-minus"></p></td></tr></table></td></tr></table></div>'
 
-		$(".received-request").append(table)
+		$("#label-bar-received").after(table)
 		$('.checkRemove').hide(); 
 	}
 });
